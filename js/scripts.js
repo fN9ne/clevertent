@@ -192,6 +192,67 @@ $(document).ready(function(){
 	$('.burger-menu__item_dropdown').click(function() {
 		$(this).toggleClass('_active');
 	});
+	$('.burger-menu__item').not('.burger-menu__item_dropdown').click(function() {
+		burger.removeClass('_active');
+		$('body').removeClass('_lock');
+	});
 	/* footer copyright year */
 	$("#year").html(new Date().getFullYear());
+	/* select */
+	if ($('.select').length > 0) {
+		for (let i = 0; i < $('.select').length; i++) {
+			let select = $('.select').eq(i);
+			let list = select.find('.select__list');
+			let current = select.find('.select__current');
+			let item = select.find('.select__item');
+			current.click(function() {
+				select.toggleClass('_active');
+			});
+			item.click(function() {
+				list.append(item);
+				current.html($(this));
+				select.removeClass('_active');
+			});
+		}
+	}
+	/* popup close */
+	if ($('.popup').length > 0) {
+		$('.popup').on('wheel', function(e) {
+			e.stopPropagation();
+		});
+		$('.rent-link').click(function() {
+			$('.popup_rent').addClass('_active');
+			$('body').addClass('_lock');
+		});
+		$('.buy-link').click(function() {
+			$('.popup_buy').addClass('_active');
+			$('body').addClass('_lock');
+		});
+		$('.call-link').click(function() {
+			$('.popup_call').addClass('_active');
+			$('body').addClass('_lock');
+		});
+		$('.popup__area').click(function() {
+			$('.popup').removeClass('_active');
+			$('body').removeClass('_lock');
+		});
+	}
+	/* close burger on click not burger place */
+	$(document).click(function(e) {
+		if (!e.target.closest('.burger')) {
+			burger.removeClass('_active');
+			$('body').removeClass('_lock');
+		}
+	});
+
+	for (let i = 0; i < $('.burger-menu__item_dropdown').length; i++) {
+		let item = $('.burger-menu__item_dropdown').eq(i);
+		let link = item.find('a').attr('href');
+		item.find('a').click(function(e) {
+			e.preventDefault();
+		});
+		$(this).find('span').click(function(e) {
+			if (!e.target.closest('i')) location.replace(link);
+		});
+	}
 });

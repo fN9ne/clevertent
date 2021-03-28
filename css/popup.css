@@ -1,0 +1,266 @@
+/* responsive value */
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 101;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+  background: rgba(53, 53, 53, 0.65);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.35s all ease;
+  -o-transition: 0.35s all ease;
+  transition: 0.35s all ease;
+}
+
+.popup._active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup__body {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popup__content {
+  border-radius: 33px;
+  background: #fafafa;
+  padding: 35px 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.popup__title {
+  color: #000;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: 500;
+  margin: 0 0 28px 0;
+}
+
+.popup__area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.input,
+.select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 0 20px 0;
+}
+
+.input:last-child,
+.select:last-child {
+  margin: 0;
+}
+
+.input label,
+.select label {
+  color: #353535;
+  font-size: 12px;
+  margin: 0 0 5px 0;
+}
+
+.input input,
+.select__current,
+.input_textarea textarea {
+  resize: none;
+  -webkit-transition: 0.35s all ease;
+  -o-transition: 0.35s all ease;
+  transition: 0.35s all ease;
+  font-size: 15px;
+  padding: 15px 25px;
+  background: #fbfbfb;
+  border: 1px solid #e2e2e2;
+  color: #000;
+  border-radius: 30px;
+}
+
+.input input .select__noitem,
+.select__current .select__noitem,
+.input_textarea textarea .select__noitem {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.input input li,
+.select__current li,
+.input_textarea textarea li {
+  pointer-events: none;
+  list-style: none;
+}
+
+.input input::-webkit-input-placeholder, .select__current::-webkit-input-placeholder, .input_textarea textarea::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.input input::-moz-placeholder, .select__current::-moz-placeholder, .input_textarea textarea::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.input input:-ms-input-placeholder, .select__current:-ms-input-placeholder, .input_textarea textarea:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.input input::-ms-input-placeholder, .select__current::-ms-input-placeholder, .input_textarea textarea::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.input input::placeholder,
+.select__current::placeholder,
+.input_textarea textarea::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.input input:hover,
+.input input:focus,
+.select__current:hover,
+.select__current:focus,
+.input_textarea textarea:hover,
+.input_textarea textarea:focus {
+  border: 1px solid rgba(53, 53, 53, 0.5);
+}
+
+.input input:hover::-webkit-input-placeholder, .input input:focus::-webkit-input-placeholder, .select__current:hover::-webkit-input-placeholder, .select__current:focus::-webkit-input-placeholder, .input_textarea textarea:hover::-webkit-input-placeholder, .input_textarea textarea:focus::-webkit-input-placeholder {
+  color: rgba(53, 53, 53, 0.5);
+}
+
+.input input:hover::-moz-placeholder, .input input:focus::-moz-placeholder, .select__current:hover::-moz-placeholder, .select__current:focus::-moz-placeholder, .input_textarea textarea:hover::-moz-placeholder, .input_textarea textarea:focus::-moz-placeholder {
+  color: rgba(53, 53, 53, 0.5);
+}
+
+.input input:hover:-ms-input-placeholder, .input input:focus:-ms-input-placeholder, .select__current:hover:-ms-input-placeholder, .select__current:focus:-ms-input-placeholder, .input_textarea textarea:hover:-ms-input-placeholder, .input_textarea textarea:focus:-ms-input-placeholder {
+  color: rgba(53, 53, 53, 0.5);
+}
+
+.input input:hover::-ms-input-placeholder, .input input:focus::-ms-input-placeholder, .select__current:hover::-ms-input-placeholder, .select__current:focus::-ms-input-placeholder, .input_textarea textarea:hover::-ms-input-placeholder, .input_textarea textarea:focus::-ms-input-placeholder {
+  color: rgba(53, 53, 53, 0.5);
+}
+
+.input input:hover::placeholder,
+.input input:focus::placeholder,
+.select__current:hover::placeholder,
+.select__current:focus::placeholder,
+.input_textarea textarea:hover::placeholder,
+.input_textarea textarea:focus::placeholder {
+  color: rgba(53, 53, 53, 0.5);
+}
+
+.select {
+  position: relative;
+}
+
+.select input {
+  display: none;
+}
+
+.select__list {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  -webkit-transition: 0.35s all ease;
+  -o-transition: 0.35s all ease;
+  transition: 0.35s all ease;
+  top: calc(100% + 10px);
+  width: 100%;
+  padding: 20px 25px;
+  border: 1px solid rgba(53, 53, 53, 0.5);
+  background: #fbfbfb;
+  border-radius: 24px;
+}
+
+.select__item {
+  list-style: none;
+  font-size: 15px;
+  color: #353535;
+  font-weight: 500;
+  padding: 5px 0;
+  background: #fbfbfb;
+  border-bottom: 1px solid rgba(53, 53, 53, 0.5);
+  -webkit-transition: 0.35s all ease;
+  -o-transition: 0.35s all ease;
+  transition: 0.35s all ease;
+  cursor: pointer;
+}
+
+.select__item:last-child {
+  border-bottom: none;
+}
+
+.select._active .select__current {
+  border: 1px solid rgba(53, 53, 53, 0.5);
+}
+
+.select._active .select__current .select__noitem {
+  color: rgba(53, 53, 53, 0.5);
+}
+
+.select._active .select__list {
+  opacity: 1;
+  visibility: visible;
+}
+
+.select__current:hover .select__noitem,
+.select__current:focus .select__noitem {
+  color: rgba(53, 53, 53, 0.5);
+}
+
+.input_textarea textarea {
+  height: 168px;
+}
+
+.input_button button {
+  border-radius: 30px;
+  background: #7AB4E4;
+  -webkit-transition: 0.35s all ease;
+  -o-transition: 0.35s all ease;
+  transition: 0.35s all ease;
+  color: #fafafa;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px 25px;
+}
+
+@media (min-width: 992px) {
+  .select__item:hover {
+    background: #ebebeb;
+  }
+
+  .input_button button:hover {
+    background: #5590CD;
+  }
+}
